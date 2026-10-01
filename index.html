@@ -23,7 +23,26 @@
     .main-bg {
       width: 100%;
       border-radius: 12px;
+      display: block;
     }
+    
+    /* Absolute Positioning para sa dalawang photo frames sa ibaba */
+    .frame-photo {
+      position: absolute;
+      bottom: 12.5%; /* Tiyak na posisyon batay sa template frame */
+      width: 17.5%;
+      height: 12%;
+      object-fit: cover;
+      border-radius: 4px;
+      z-index: 2;
+    }
+    .frame-left {
+      left: 14%;
+    }
+    .frame-right {
+      right: 14%;
+    }
+
     .heart-btn {
       background: none;
       border: none;
@@ -61,9 +80,13 @@
 <body>
 
   <div class="container">
-    <!-- Palitan ang background-image.jpg ng file name ng iyong background image -->
-    <img src="background-image.jpg" class="main-bg" alt="Bouquet Background">
-    
+    <!-- Main Background Image (Tulips & Template) -->
+    <img src="background.jpg" class="main-bg" alt="Bouquet Background">
+
+    <!-- Dalawang Larawan na Naka-frame sa Ibaba -->
+    <img src="left-photo.jpg" class="frame-photo frame-left" alt="Left Frame Photo">
+    <img src="right-photo.jpg" class="frame-photo frame-right" alt="Right Frame Photo">
+
     <br>
     <button class="heart-btn" onclick="showMessage()">❤️ <span style="font-size: 16px; color: white;">Message</span></button>
   </div>

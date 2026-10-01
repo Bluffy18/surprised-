@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Tulips Bouquet</title>
+  <style>
+    body {
+      background-color: #f770db;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .container {
+      position: relative;
+      width: 350px;
+      text-align: center;
+    }
+    .main-bg {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .heart-btn {
+      background: none;
+      border: none;
+      font-size: 32px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: transform 0.2s;
+    }
+    .heart-btn:hover {
+      transform: scale(1.2);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      max-width: 80%;
+      z-index: 10;
+      text-align: center;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Palitan ang background-image.jpg ng file name ng iyong background image -->
+    <img src="background-image.jpg" class="main-bg" alt="Bouquet Background">
+    
+    <br>
+    <button class="heart-btn" onclick="showMessage()">❤️ <span style="font-size: 16px; color: white;">Message</span></button>
+  </div>
+
+  <div class="overlay" id="overlay" onclick="closeMessage()"></div>
+  <div class="modal" id="modal">
+    <p>Hi po eto muna digital tulips flowers bouquet for you fn. ahahah hope you like it i made it myself for you, i guess your tired and damon nangyare sa buong araw mo hahaha</p>
+    <button onclick="closeMessage()">Close</button>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('modal').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+    function closeMessage() {
+      document.getElementById('modal').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
